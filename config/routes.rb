@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  get "/allproducts", to: 'products#all_products_method'
-  get "/add_a_product", to: 'products#add_a_product_method'
-  post "/you_added", to: 'products#you_added_method'
+  get "/", to: 'products#index'
+  get "/products", to: 'products#index'
+  get "/products/new", to: 'products#new'
+  post "/products", to: 'products#create'
+  get "/products/:id", to: 'products#show'
+  get "/products/:id/edit", to: 'products#edit'
+  patch "/products/:id", to: "products#update"
+  delete "/products/:id", to: "products#destroy"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,19 @@
+<h1>This is product page</h1>
+<%= @product.name %>
+<%= @product.price %>
+<%= @product.image %>
+<%= @product.description %>
+<br><br>
+<a href = "/products/<%=@product.id%>/edit">Click Here to edit this product</a>
+<br><br>
+<%=link_to "Destroy product", "/products/#{@product.id}", method: :delete, data: {confirm: "are you sure you want to delete"}%>"
+<br><br> <!-- other method of deleting -->
+<%=form_tag "/products/#{@product.id}", method: :delete do %>
+  <input type = "submit" value = "Destroy Product">
+  <% end %>
+
+  <br><br> <!-- other method  -->
+  <%=button_to "Destroy product", "/products/#{@product.id}", method: :delete %>"
+
+  <!-- other method -->
+  

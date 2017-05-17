@@ -1,0 +1,16 @@
+<h1 class = "text-center">All Products Page</h1>
+<% @all_products.each_slice(3) do |three_products| %>
+<div class = "row">
+<% three_products.each do |product| %>
+<div class = "col-md-4">
+<div class="well">
+Product: <%= product.name %><br>
+Price: <%= product.price %><br>
+<img src = "<%= product.image %>"><br>
+Description: <%= product.description %><br>
+<a href = "/products/<%= product.id %>">Click Here to see more info</a>
+</div>
+</div>
+<% end %>
+</div>
+<% end %>
