@@ -1,8 +1,11 @@
 <h1>This is product page</h1>
-<%= @product.name %>
-<%= @product.price %>
-<%= @product.image %>
-<%= @product.description %>
+Product: <%= @product.name %><br>
+Price: <%= number_to_currency(@product.price) %><br>
+Tax: <%= @product.tax %><br>
+Total: <%= @product.total %><br>
+<h4><%= @product.sale_message %><br></h4>
+<img src = "<%= @product.image %>"><br>
+Description: <%= @product.description %><br>
 <br><br>
 <a href = "/products/<%=@product.id%>/edit">Click Here to edit this product</a>
 <br><br>
